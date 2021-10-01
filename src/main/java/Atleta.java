@@ -1,8 +1,7 @@
 import java.util.Arrays;
 import java.util.List;
 
-public class Athlete implements IAthlete{
-
+public class Atleta implements IAtleta{
     private Integer matricula;
     private String primeiroNome;
     private String segundoNome;
@@ -11,18 +10,18 @@ public class Athlete implements IAthlete{
     private float pesoIMC;
     private float alturaIMC;
 
-    public Athlete(int matricula) {
+    public Atleta(int matricula) {
         this.matricula = matricula;
-        this.primeiroNome = primeiroNome;
-        Athlete athlete = BD.getAthlete(matricula);
-        this.segundoNome = segundoNome;
-        this.treino = treino;
-        this.personal = personal;
-        this.pesoIMC = pesoIMC;
-        this.alturaIMC = alturaIMC;
+        Atleta objeto = BD.getAtleta(matricula);
+        this.primeiroNome = objeto.primeiroNome;
+        this.segundoNome = objeto.segundoNome;
+        this.treino = objeto.treino;
+        this.personal = objeto.personal;
+        this.pesoIMC = objeto.pesoIMC;
+        this.alturaIMC = objeto.alturaIMC;
 
     }
-    public Athlete(Integer matricula, String primeiroNome, String segundoNome,float pesoIMC, float alturaIMC ,String treino, PersonalTrainer personal) {
+    public Atleta(Integer matricula, String primeiroNome, String segundoNome, float pesoIMC, float alturaIMC , String treino, PersonalTrainer personal) {
         this.matricula = matricula;
         this.primeiroNome = primeiroNome;
         this.segundoNome = segundoNome;
@@ -43,9 +42,4 @@ public class Athlete implements IAthlete{
     public List<Float> acessarIMC(PersonalTrainer personal){
         return Arrays.asList(this.pesoIMC, this.alturaIMC);
     }
-
-
-
-
-
 }
