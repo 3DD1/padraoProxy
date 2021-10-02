@@ -2,12 +2,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class BD {
-    private static Map<Integer, Atleta> athletes = new HashMap<>();
+    private static Map<Integer, Atleta> atletas = new HashMap<>();
 
     public static Atleta getAtleta(Integer matricula){
-        return athletes.get(matricula);
+        return atletas.get(matricula);
     }
     public static void addAtleta(Atleta atleta){
-        athletes.put(atleta.getMatricula(), atleta);
+        atletas.put(atleta.getMatricula(), atleta);
     }
 }
