@@ -18,7 +18,7 @@ public class AtletaProxy implements IAtleta {
     @Override
     public List<Float>acessarIMC(PersonalTrainer personal){
         if (!personal.isAdministrador()) {
-            throw new IllegalArgumentException("Incorreto");
+            throw new IllegalArgumentException("Acesso incorreto");
         }
         if(this.atleta == null){
             this.atleta = new Atleta(this.matricula);

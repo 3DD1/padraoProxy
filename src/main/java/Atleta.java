@@ -6,8 +6,7 @@ public class Atleta implements IAtleta{
     private String primeiroNome;
     private String segundoNome;
     private String treino;
-    private Float pesoIMC;
-    private Float alturaIMC;
+    private Float imc;
 
     public Atleta(int matricula) {
         this.matricula = matricula;
@@ -15,17 +14,15 @@ public class Atleta implements IAtleta{
         this.primeiroNome = objeto.primeiroNome;
         this.segundoNome = objeto.segundoNome;
         this.treino = objeto.treino;
-        this.pesoIMC = objeto.pesoIMC;
-        this.alturaIMC = objeto.alturaIMC;
+        this.imc = objeto.imc;
 
     }
-    public Atleta(Integer matricula, String primeiroNome, String segundoNome, String treino, Float pesoIMC, Float alturaIMC) {
+    public Atleta(Integer matricula, String primeiroNome, String segundoNome, String treino, Float imc) {
         this.matricula = matricula;
         this.primeiroNome = primeiroNome;
         this.segundoNome = segundoNome;
         this.treino = treino;
-        this.pesoIMC = pesoIMC;
-        this.alturaIMC = alturaIMC;
+        this.imc = imc;
     }
 
 
@@ -40,6 +37,6 @@ public class Atleta implements IAtleta{
     }
     @Override
     public List<Float> acessarIMC(PersonalTrainer personal){
-        return Arrays.asList(this.pesoIMC, this.alturaIMC);
+        return Arrays.asList(this.imc);
     }
 }
